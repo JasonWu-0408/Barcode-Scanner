@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Taps Counter</string>
+    <string name="clearButton_name">CLEAR</string>
+    <string name="CountButton_name">Count</string>
+    <string name="count_initial_value">0</string>
+    <string name="toast_message">Hello Toast!</string>
+</resources>
