@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private int count = 0;
     private TextView showCount;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,14 +26,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void add(View view){
+
         count++;
-        if(showCount != null)
+
+        if(showCount != null) {
+            Toast message = Toast.makeText(this,R.string.tap_message,Toast.LENGTH_SHORT);
+            message.show();
             showCount.setText(Integer.toString(count));
+            message.cancel();
+        }
 
     }
 
-    public void showMessage(View view){
-        Toast message = Toast.makeText(this,R.string.toast_message,Toast.LENGTH_SHORT);
-        message.show();
-    }
 }
