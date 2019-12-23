@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Taps Counter</string>
     <string name="clearButton_name">CLEAR</string>
-    <string name="CountButton_name">Count</string>
+    <string name="CountButton_name">Add</string>
     <string name="count_initial_value">0</string>
-    <string name="tap_message">Scanned!</string>
+    <string name="text_header">Message Received</string>
 </resources>

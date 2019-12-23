@@ -2,16 +2,23 @@ package com.sagedata.toastcounter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
+    //For Log_Tag
+    private static final String LOG_TAG =
+            MainActivity.class.getSimpleName();
+    //Define the Key for intent
+    public static final String EXTRA_MESSAGE =
+            "com.example.android.twoactivities.extra.MESSAGE";
 
     private int count = 0;
     private TextView showCount;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +33,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void add(View view){
-
         count++;
-
         if(showCount != null) {
-            Toast message = Toast.makeText(this,R.string.tap_message,Toast.LENGTH_SHORT);
-            message.show();
             showCount.setText(Integer.toString(count));
-            message.cancel();
+
         }
+    }
+
+    public void send(View view){
+        Log.d(LOG_TAG, "Button clicked!");
+
+        String message = showCount.getText().toString();
+
+        Intent intent = new Intent(this, SecondActivity.class);
+
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
 
     }
 
