@@ -19,12 +19,53 @@ public class MainActivity extends AppCompatActivity {
 
     private int count = 0;
     private TextView showCount;
+    private TextView check;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showCount = (TextView) findViewById(R.id.show_count);
+
+        Log.d(LOG_TAG, "-------");
+        Log.d(LOG_TAG, "onCreate");
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        Log.d(LOG_TAG, "onStart");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d(LOG_TAG, "onPause");
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        Log.d(LOG_TAG, "onResart");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(LOG_TAG, "onResume");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(LOG_TAG, "onStop");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(LOG_TAG, "onDestroy");
     }
 
     public void clear(View view){
@@ -51,5 +92,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+//    @Override
+//    public void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//
+//        if (check.getVisibility() == View.VISIBLE) {
+//            outState.putBoolean("reply_visible", true);
+//        }
+//
+//
+//    }
 
 }
